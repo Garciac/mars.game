@@ -10,7 +10,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 me.levelDirector.loadLevel("marslevel01");
                 
-                var player = me.pool.pull("player1", 0, 420, {});
+                var player = me.pool.pull("mario", 0, 420, {});
                 me.game.world.addChild(player, 3);
 
 		// add our HUD to the game world
