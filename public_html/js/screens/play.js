@@ -1,3 +1,5 @@
+/* global game */
+
 game.PlayScreen = me.ScreenObject.extend({
 	/**
 	 *  action to perform on state change
@@ -7,6 +9,9 @@ game.PlayScreen = me.ScreenObject.extend({
 		game.data.score = 0;
                 
                 me.levelDirector.loadLevel("marslevel01");
+                
+                var player = me.pool.pull("player1", 0, 420, {});
+                me.game.world.addChild(player, 3);
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();

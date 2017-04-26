@@ -5,6 +5,7 @@ game.resources = [
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
            {name: "ground_3", type:"image", src: "data/img/ground_3.png"},
+           {name: "player1", type:"image", src: "data/img/player1.png"},
 
 	/* Atlases 
 	 * @example
