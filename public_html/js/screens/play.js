@@ -10,7 +10,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 me.levelDirector.loadLevel("marslevel01");
                 
-                var player = me.pool.pull("mario", 0, 432, {});
+                var player = me.pool.pull("mario", 0, 410, {});
                 me.game.world.addChild(player, 3);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
