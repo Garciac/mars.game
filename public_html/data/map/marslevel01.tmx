@@ -20,9 +20,11 @@
   </data>
  </layer>
  <objectgroup name="trigger-entities">
-  <object id="6" name="levelTrigger" x="983" y="422" width="69" height="137">
+  <object id="6" name="levelTrigger" x="999" y="422" width="69" height="137">
    <properties>
     <property name="level" value="marslevel02"/>
+    <property name="xSpawn" value="400"/>
+    <property name="ySpawn" value="0"/>
    </properties>
   </object>
  </objectgroup>
