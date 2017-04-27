@@ -7,6 +7,7 @@ game.resources = [
            {name: "ground_3", type:"image", src: "data/img/ground_3.png"},
            {name: "mario", type:"image", src: "data/img/player1.png"},
            {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
+           {name: "blackhole", type:"image", src: "data/img/blackhole.png"},
 
 	/* Atlases 
 	 * @example
@@ -19,6 +20,7 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
            {name: "marslevel01", type: "tmx", src: "data/map/marslevel01.tmx"},
+           {name: "marslevel02", type: "tmx", src: "data/map/marslevel02.tmx"},
 
 	/* Background music. 
 	 * @example
