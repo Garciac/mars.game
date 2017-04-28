@@ -4,6 +4,7 @@ game.resources = [
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
+           {name: "asteroid", type:"image", src: "data/img/asteroid.png"},
            {name: "ground_3", type:"image", src: "data/img/ground_3.png"},
            {name: "astronaut1", type:"image", src: "data/img/astronaut1.png"},
            {name: "astronaut2", type:"image", src: "data/img/astronaut2.png"},
@@ -15,6 +16,7 @@ game.resources = [
            {name: "martiansurface2", type:"image", src: "data/img/martiansurface2.png"},
            {name: "martiansurface3", type:"image", src: "data/img/martiansurface3.png"},
            {name: "martiansurface4", type:"image", src: "data/img/martiansurface4.png"},
+           {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
            {name: "title-screen", type:"image", src: "data/img/title-screen.png"},
            
 

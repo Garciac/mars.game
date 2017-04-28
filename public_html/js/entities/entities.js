@@ -70,24 +70,23 @@ game.LevelTrigger = me.Entity.extend({
 
 });
 
-//game.BadGuy = me.Entity.extend({
-  //  init: function (x, y, settings) {
-    //    this._super(me.Entity, 'init', [x, y, {
-      //          image: "asteroid",
-        //        spritewidth: "173",
-          //      spriteheight: "132",
-            //    width: 173,
-              //  height: 132,
-                //getShape: function () {
-                  //  return (new me.Rect(0, 0, 173, 132)).toPolygon();
-              //  }
-           // }]);
+game.BadGuy = me.Entity.extend({
+    init: function (x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, {
+                image: "asteroid",
+                spritewidth: "312",
+                spriteheight: "336",
+                width: 312,
+                height: 336,
+                getShape: function () {
+                    return (new me.Rect(0, 0, 312, 336)).toPolygon();
+                }
+            }]);
 
-   // },
+    },
 
-   // update: function (delta) {
+    update: function (delta) {
 
-   // }
-
-// });
+    }
+});
 
