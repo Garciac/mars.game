@@ -4,18 +4,18 @@
 game.PlayerEntity = me.Entity.extend({
     init: function (x, y, settings) {
         this._super(me.Entity, 'init', [x, y, {
-                image: "mario",
-                spritewidth: "128",
-                spriteheight: "128",
-                width: 128,
-                height: 128,
+                image: "astronaut1",
+                spritewidth: "48",
+                spriteheight: "48",
+                width: 48,
+                height: 48,
                 getShape: function () {
-                    return (new me.Rect(0, 0, 128, 128)).toPolygon();
+                    return (new me.Rect(0, 0, 48, 48)).toPolygon();
                 }
             }]);
         //makes character walk and frame and []inside this tells which frame to use
-        this.renderable.addAnimation("idle", [3]);
-        this.renderable.addAnimation("smallWalk", [8, 9, 10, 11, 12, 13], 80);
+        this.renderable.addAnimation("idle", [0]);
+        this.renderable.addAnimation("smallWalk", [0, 0, 0], 80);
 
         this.renderable.setCurrentAnimation("idle");
 
@@ -30,10 +30,10 @@ game.PlayerEntity = me.Entity.extend({
         } else {
             this.body.vel.x = 0;
         }
-        
+
         this.body.update(delta);
         me.collision.check(this, true, this.collideHandler.bind(this), true);
-        
+
         if (this.body.vel.x !== 0) {
             if (!this.renderable.isCurrentAnimation("smallWalk")) {
                 this.renderable.setCurrentAnimation("smallWalk");
@@ -42,33 +42,52 @@ game.PlayerEntity = me.Entity.extend({
         } else {
             this.renderable.setCurrentAnimation("idle");
         }
-  
-        
-        
+
         this._super(me.Entity, "update", [delta]);
         return true;
     },
-    
-    collideHandler: function(response){
-        
+
+    collideHandler: function (response) {
+
     }
 
 });
 
 game.LevelTrigger = me.Entity.extend({
-   init: function(x, y, settings){
-       this._super(me.Entity, 'init', [x, y, settings]);
-       this.body.onCollision = this.onCollision.bind(this);
-       this.level = settings.level;
-       this.xSpawn = settings.xSpawn;
-       this.ySpawn = settings.ySpawn;
-   } ,
-   
-   onCollision: function(){
-       this.body.setCollisionMask(me.collision.types.NO_OBJECT);
-       me.levelDirector.loadLevel(this.level);
-       me.state.current().resetPlayer(this.xSpawn, this.ySpawn);
-   }
-   
+    init: function (x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, settings]);
+        this.body.onCollision = this.onCollision.bind(this);
+        this.level = settings.level;
+        this.xSpawn = settings.xSpawn;
+        this.ySpawn = settings.ySpawn;
+    },
+
+    onCollision: function () {
+        this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+        me.levelDirector.loadLevel(this.level);
+        me.state.current().resetPlayer(this.xSpawn, this.ySpawn);
+    }
+
 });
+
+//game.BadGuy = me.Entity.extend({
+  //  init: function (x, y, settings) {
+    //    this._super(me.Entity, 'init', [x, y, {
+      //          image: "asteroid",
+        //        spritewidth: "173",
+          //      spriteheight: "132",
+            //    width: 173,
+              //  height: 132,
+                //getShape: function () {
+                  //  return (new me.Rect(0, 0, 173, 132)).toPolygon();
+              //  }
+           // }]);
+
+   // },
+
+   // update: function (delta) {
+
+   // }
+
+// });
 

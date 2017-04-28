@@ -27,8 +27,13 @@ game.PlayScreen = me.ScreenObject.extend({
         me.game.world.removeChild(this.HUD);
     },
 
-    resetPlayer: function (x, y) {
+    /* resetPlayer: function (x, y) {
         var player = me.pool.pull("mario", x, y, {});
+        me.game.world.addChild(player, 30);
+    } */
+    
+    resetPlayer: function (x, y) {
+        var player = me.pool.pull("astronaut1", x, y, {});
         me.game.world.addChild(player, 30);
     }
 
